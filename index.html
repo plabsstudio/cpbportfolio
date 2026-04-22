@@ -60,15 +60,20 @@
         /* ── PANEL ── */
         .panel {
             position: fixed; top: 0; right: -100%;
-            width: min(560px, 100vw); height: 100vh;
+            width: min(560px, 100vw);
+            height: 100vh;
+            height: 100dvh;
+            height: -webkit-fill-available;
             background: var(--surface);
             border-left: 1px solid rgba(201,169,110,0.15);
             z-index: 200;
             transition: right 0.52s cubic-bezier(0.16, 1, 0.3, 1);
-            overflow-y: scroll; padding: 68px 42px 50px;
+            overflow-y: scroll;
             -webkit-overflow-scrolling: touch;
-            overscroll-behavior: contain;
+            overscroll-behavior-y: contain;
             touch-action: pan-y;
+            will-change: scroll-position;
+            padding: 68px 42px 80px;
             scrollbar-width: thin; scrollbar-color: rgba(201,169,110,0.18) transparent;
         }
         .panel.open { right: 0; }
@@ -731,6 +736,22 @@ function closePanel() {
 document.getElementById("panelClose").addEventListener("click", closePanel);
 overlay.addEventListener("click", closePanel);
 document.addEventListener("keydown", e => { if (e.key === "Escape") closePanel(); });
+
+// ── iOS scroll fix
+let _touchStartY = 0;
+panel.addEventListener('touchstart', e => {
+    _touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+panel.addEventListener('touchmove', e => {
+    const deltaY = e.touches[0].clientY - _touchStartY;
+    const atTop    = panel.scrollTop <= 0 && deltaY > 0;
+    const atBottom = panel.scrollTop + panel.clientHeight >= panel.scrollHeight - 1 && deltaY < 0;
+    if (atTop || atBottom) {
+        e.preventDefault();
+    }
+    e.stopPropagation();
+}, { passive: false });
 
 // ── Resize
 window.addEventListener("resize", () => {
