@@ -175,7 +175,7 @@
 <script>
 // ═══════════════════════════════════════════════════════
 //  PORTFOLIO DATA — Catalina Pla
-//  Última actualización: Abril 2026
+//  Última actualización: Septiembre 2026
 // ═══════════════════════════════════════════════════════
 
 const NODES = [
@@ -184,7 +184,7 @@ const NODES = [
         id: "catalina", label: "CATALINA", sublabel: "PLA",
         type: "center", size: 62, color: "#ffffff",
         content: {
-            tag: "Portfolio Privado · Abril 2026",
+            tag: "Portfolio Privado · Septiembre 2026",
             title: "Ads Manager · Marketing · Producción · Dirección Audiovisual",
             body: `
                 <p>Soy Catalina, y combino estrategia, creatividad y ejecución en un solo perfil. Gestiono campañas publicitarias, construyo presencia digital y produzco contenido audiovisual — todo bajo la misma visión.</p>
@@ -200,6 +200,7 @@ const NODES = [
                     <span class="tag">Producción</span>
                     <span class="tag">Dirección Audiovisual</span>
                     <span class="tag">Fotografía</span>
+                    <span class="tag">Automatización</span>
                 </div>
                 <div class="sl">Formación</div>
                 <p style="font-size:0.88rem;color:rgba(255,255,255,0.55)">Dirección Audiovisual & Comunicaciones<br>
@@ -293,6 +294,12 @@ const NODES = [
                     <span class="tag">Impresiones</span>
                 </div>
                 <img src="images/metricas_rrss.jpeg" alt="Métricas Instagram" style="width:55%;border-radius:10px;margin:8px 0 4px;border:1px solid rgba(255,255,255,0.08);display:block">
+                <div class="sl">Marcas con las que trabajo</div>
+                <div>
+                    <span class="tag">Club Conecta Pádel</span>
+                    <span class="tag">Agencia Personajes</span>
+                    <span class="tag">In Fraganti</span>
+                </div>
                 <div class="sl">Reels</div>
                 <div class="reel-grid" id="reelGrid">
                     <div class="reel-wrap" data-src="videos/reel_infraganti.mp4">
@@ -343,10 +350,10 @@ const NODES = [
         id: "produccion", label: "Producción",
         type: "node", size: 40, color: "#3b82f6",
         content: {
-            tag: "Eventos & Producción",
-            title: "Producción",
+            tag: "Producción & Gestión",
+            title: "Producción & Gestión",
             body: `
-                <p>Experiencia en producción de eventos y gestión de proyectos en entornos de alta demanda. Sé organizar, ejecutar y resolver en tiempo real.</p>
+                <p>Experiencia en producción de eventos y gestión de proyectos en entornos de alta demanda. Sé organizar, ejecutar y resolver en tiempo real — y automatizar la operación para que todo escale sin fricción.</p>
                 <div class="sl">In Fraganti — Barra Móvil</div>
                 <div style="margin-top:6px;padding:18px;border:1px solid rgba(76,175,142,0.25);border-radius:12px;background:rgba(76,175,142,0.05)">
                     <div style="font-weight:600;color:#fff;margin-bottom:6px">Cofundadora · 2024 — Presente</div>
@@ -354,13 +361,24 @@ const NODES = [
                 </div>
                 <div class="sl">Producción audiovisual</div>
                 <p style="font-size:0.87rem">Práctica universitaria en <strong style="color:#fff">2326Kino</strong> — preproducción, distribución y coordinación de proyectos audiovisuales.</p>
-                <div class="sl">Habilidades de producción</div>
+                <div class="sl">Automatización & Gestión — Agencia de Casting Personajes</div>
+                <div style="margin-top:6px;padding:18px;border:1px solid rgba(139,92,246,0.3);border-radius:12px;background:rgba(139,92,246,0.06)">
+                    <div style="font-weight:600;color:#fff;margin-bottom:6px">Encargada de Automatizaciones · 2026 — Presente</div>
+                    <p style="font-size:0.87rem">Llevo el orden operativo y la automatización de la agencia: sistema de agendamiento, base de datos de talentos, bots de gestión y un panel de administración a medida. Menos caos, más estrategia.</p>
+                    <div style="margin-top:10px;font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.7">
+                        📅 Agendamiento automatizado &nbsp;·&nbsp; 🗂️ Base de datos de talentos<br>
+                        🤖 Bots de gestión &nbsp;·&nbsp; 📊 Panel de administración
+                    </div>
+                </div>
+                <div class="sl">Habilidades de producción & gestión</div>
                 <div>
                     <span class="tag">Gestión de Eventos</span>
                     <span class="tag">Logística</span>
                     <span class="tag">Coordinación</span>
                     <span class="tag">Atención al Cliente</span>
                     <span class="tag">Preproducción</span>
+                    <span class="tag">Automatización de Procesos</span>
+                    <span class="tag">Gestión Estratégica</span>
                 </div>
             `
         }
@@ -405,6 +423,11 @@ const NODES = [
                         <img src="images/foto_evento2.jpg" style="width:100%;display:block">
                     </div>
                 </div>
+                <div class="sl">Clientes & Grabaciones</div>
+                <div style="margin:6px 0 4px;padding:16px 18px;border:1px solid rgba(59,130,246,0.28);border-radius:12px;background:rgba(59,130,246,0.05)">
+                    <div style="font-weight:600;color:#fff;margin-bottom:4px">Club Conecta Pádel · 2026</div>
+                    <p style="font-size:0.87rem">Grabación y producción de contenido audiovisual para el club: registro de partidos, ambiente y piezas de marca para redes sociales.</p>
+                </div>
                 <div class="sl">Habilidades</div>
                 <div>
                     <span class="tag">Edición de Video</span>
@@ -439,6 +462,9 @@ const NODES = [
 
                 <div class="sl">Web & E-commerce</div>
                 <div><span class="tag">Shopify</span><span class="tag">GitHub</span></div>
+
+                <div class="sl">Automatización & Sistemas</div>
+                <div><span class="tag">Automatización de Procesos</span><span class="tag">Bases de Datos</span><span class="tag">Bots</span><span class="tag">Paneles de Gestión</span></div>
 
                 <div class="sl">Productividad</div>
                 <div><span class="tag">Notion</span><span class="tag">Microsoft Office</span><span class="tag">Google Workspace</span></div>
@@ -790,7 +816,7 @@ const LABEL_TRANS = {
 
 const CONTENT_EN = {
     catalina: {
-        tag: "Private Portfolio · April 2026",
+        tag: "Private Portfolio · September 2026",
         title: "Ads Manager · Marketing · Production · Audiovisual Direction",
         body: `
             <p>I'm Catalina — I combine strategy, creativity, and execution in a single profile. I manage ad campaigns, build digital presence, and produce audiovisual content, all under the same vision.</p>
@@ -806,6 +832,7 @@ const CONTENT_EN = {
                 <span class="tag">Production</span>
                 <span class="tag">Audiovisual Direction</span>
                 <span class="tag">Photography</span>
+                <span class="tag">Automation</span>
             </div>
             <div class="sl">Education</div>
             <p style="font-size:0.88rem;color:rgba(255,255,255,0.55)">Audiovisual Direction & Communications<br>
@@ -883,6 +910,12 @@ const CONTENT_EN = {
                 <span class="tag">Impressions</span>
             </div>
             <img src="images/metricas_rrss.jpeg" alt="Instagram Metrics" style="width:55%;border-radius:10px;margin:8px 0 4px;border:1px solid rgba(255,255,255,0.08);display:block">
+            <div class="sl">Brands I work with</div>
+            <div>
+                <span class="tag">Club Conecta Pádel</span>
+                <span class="tag">Personajes Agency</span>
+                <span class="tag">In Fraganti</span>
+            </div>
             <div class="sl">Reels</div>
             <div class="reel-grid" id="reelGrid">
                 <div class="reel-wrap" data-src="videos/reel_infraganti.mp4">
@@ -923,10 +956,10 @@ const CONTENT_EN = {
         `
     },
     produccion: {
-        tag: "Events & Production",
-        title: "Production",
+        tag: "Production & Management",
+        title: "Production & Management",
         body: `
-            <p>Experience in event production and project management in high-demand environments. I know how to organize, execute, and problem-solve in real time.</p>
+            <p>Experience in event production and project management in high-demand environments. I know how to organize, execute, and problem-solve in real time — and automate operations so everything scales without friction.</p>
             <div class="sl">In Fraganti — Mobile Bar</div>
             <div style="margin-top:6px;padding:18px;border:1px solid rgba(76,175,142,0.25);border-radius:12px;background:rgba(76,175,142,0.05)">
                 <div style="font-weight:600;color:#fff;margin-bottom:6px">Co-founder · 2024 — Present</div>
@@ -934,13 +967,24 @@ const CONTENT_EN = {
             </div>
             <div class="sl">Audiovisual production</div>
             <p style="font-size:0.87rem">University internship at <strong style="color:#fff">2326Kino</strong> — pre-production, distribution, and coordination of audiovisual projects.</p>
-            <div class="sl">Production skills</div>
+            <div class="sl">Automation & Management — Personajes Casting Agency</div>
+            <div style="margin-top:6px;padding:18px;border:1px solid rgba(139,92,246,0.3);border-radius:12px;background:rgba(139,92,246,0.06)">
+                <div style="font-weight:600;color:#fff;margin-bottom:6px">Head of Automation · 2026 — Present</div>
+                <p style="font-size:0.87rem">I run the agency's operational structure and automation: scheduling system, talent database, management bots, and a custom admin panel. Less chaos, more strategy.</p>
+                <div style="margin-top:10px;font-size:0.82rem;color:rgba(255,255,255,0.5);line-height:1.7">
+                    📅 Automated scheduling &nbsp;·&nbsp; 🗂️ Talent database<br>
+                    🤖 Management bots &nbsp;·&nbsp; 📊 Admin panel
+                </div>
+            </div>
+            <div class="sl">Production & management skills</div>
             <div>
                 <span class="tag">Event Management</span>
                 <span class="tag">Logistics</span>
                 <span class="tag">Coordination</span>
                 <span class="tag">Client Relations</span>
                 <span class="tag">Pre-production</span>
+                <span class="tag">Process Automation</span>
+                <span class="tag">Strategic Management</span>
             </div>
         `
     },
@@ -979,6 +1023,11 @@ const CONTENT_EN = {
                     <img src="images/foto_evento2.jpg" style="width:100%;display:block">
                 </div>
             </div>
+            <div class="sl">Clients & Shoots</div>
+            <div style="margin:6px 0 4px;padding:16px 18px;border:1px solid rgba(59,130,246,0.28);border-radius:12px;background:rgba(59,130,246,0.05)">
+                <div style="font-weight:600;color:#fff;margin-bottom:4px">Club Conecta Pádel · 2026</div>
+                <p style="font-size:0.87rem">Filming and audiovisual content production for the club: match coverage, atmosphere, and brand pieces for social media.</p>
+            </div>
             <div class="sl">Skills</div>
             <div>
                 <span class="tag">Video Editing</span>
@@ -1007,6 +1056,9 @@ const CONTENT_EN = {
 
             <div class="sl">Web & E-commerce</div>
             <div><span class="tag">Shopify</span><span class="tag">GitHub</span></div>
+
+            <div class="sl">Automation & Systems</div>
+            <div><span class="tag">Process Automation</span><span class="tag">Databases</span><span class="tag">Bots</span><span class="tag">Admin Dashboards</span></div>
 
             <div class="sl">Productivity</div>
             <div><span class="tag">Notion</span><span class="tag">Microsoft Office</span><span class="tag">Google Workspace</span></div>
