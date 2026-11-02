@@ -154,8 +154,8 @@
 
 <header class="header">
     <div class="logo">Catalina Pla</div>
-    <button id="langBtn" onclick="toggleLang()" style="background:transparent;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.55);border-radius:6px;padding:4px 12px;font-size:0.65rem;letter-spacing:0.18em;cursor:pointer;font-family:inherit;transition:all 0.2s;margin-left:12px" onmouseover="this.style.borderColor='rgba(201,169,110,0.5)';this.style.color='rgba(201,169,110,0.9)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.18)';this.style.color='rgba(255,255,255,0.55)'">EN</button>
-    <div class="badge" id="badgeEl">Portfolio Privado</div>
+    <button id="langBtn" onclick="toggleLang()" style="background:transparent;border:1px solid rgba(255,255,255,0.34);color:rgba(255,255,255,0.78);border-radius:6px;padding:4px 12px;font-size:0.65rem;letter-spacing:0.18em;cursor:pointer;font-family:inherit;transition:all 0.2s;margin-left:12px" onmouseover="this.style.borderColor='rgba(201,169,110,0.5)';this.style.color='rgba(201,169,110,0.9)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.34)';this.style.color='rgba(255,255,255,0.78)'">EN</button>
+    <div class="badge" id="badgeEl">Portafolio</div>
 </header>
 
 <div id="universe"></div>
@@ -184,7 +184,7 @@ const NODES = [
         id: "catalina", label: "CATALINA", sublabel: "PLA",
         type: "center", size: 62, color: "#ffffff",
         content: {
-            tag: "Portfolio Privado · Septiembre 2026",
+            tag: "Portafolio · Septiembre 2026",
             title: "Ads Manager · Marketing · Producción · Dirección Audiovisual",
             body: `
                 <p>Soy Catalina, y combino estrategia, creatividad y ejecución en un solo perfil. Gestiono campañas publicitarias, construyo presencia digital y produzco contenido audiovisual — todo bajo la misma visión.</p>
@@ -798,8 +798,8 @@ let currentLang = 'es';
 let currentNode = null;
 
 const UI_TRANS = {
-    es: { badge: 'Portfolio Privado', hint: 'Explora los nodos — click para ver más' },
-    en: { badge: 'Private Portfolio', hint: 'Explore the nodes — click to learn more' }
+    es: { badge: 'Portafolio', hint: 'Explora los nodos — click para ver más' },
+    en: { badge: 'Portfolio', hint: 'Explore the nodes — click to learn more' }
 };
 
 const LABEL_TRANS = {
@@ -814,7 +814,7 @@ const LABEL_TRANS = {
 
 const CONTENT_EN = {
     catalina: {
-        tag: "Private Portfolio · September 2026",
+        tag: "Portfolio · September 2026",
         title: "Ads Manager · Marketing · Production · Audiovisual Direction",
         body: `
             <p>I'm Catalina — I combine strategy, creativity, and execution in a single profile. I manage ad campaigns, build digital presence, and produce audiovisual content, all under the same vision.</p>
@@ -1112,6 +1112,19 @@ function toggleLang() {
         document.getElementById('panelBody').innerHTML    = c.body;
     }
 }
+
+// ═══════════════════════════════════════════════════════
+//  INITIAL LANGUAGE — English for non-Spanish visitors
+//  (Spanish browsers, incl. Chile, keep Spanish; toggle overrides)
+// ═══════════════════════════════════════════════════════
+(function initLang(){
+    try {
+        var nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'es';
+        if (nav.toLowerCase().indexOf('es') !== 0) {
+            toggleLang(); // flip es -> en, syncs badge, hint and node labels
+        }
+    } catch (e) {}
+})();
 </script>
 </body>
 </html>
