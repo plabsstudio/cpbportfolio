@@ -216,6 +216,7 @@ const NODES = [
             title: "Producción & Automatización",
             body: `
                 <p>Mi eje principal. Gestiono operaciones en entornos de alta demanda y construyo la automatización que hace que todo escale sin fricción.</p>
+                <p>Mi experiencia manejando publicidad para marcas es exactamente por qué entiendo qué pide un cliente-marca: estuve del otro lado del brief.</p>
                 <div class="sl">Agencia de Casting Personajes</div>
                 <div style="margin-top:6px;padding:18px;border:1px solid rgba(139,92,246,0.3);border-radius:12px;background:rgba(139,92,246,0.06)">
                     <div style="font-weight:600;color:#fff;margin-bottom:6px">Asistente de Producción y Automatización · 2026 — Presente</div>
@@ -292,57 +293,9 @@ const NODES = [
         }
     },
 
-    // ── MARKETING (una rama entre varias) ──
     {
-        id: "mkt", label: "Marketing", sublabel: "Digital",
-        type: "node", size: 34, color: "#60a5fa",
-        content: {
-            tag: "Estrategia Digital",
-            title: "Marketing Digital",
-            body: `
-                <p>Una de varias áreas que manejo. Estrategia y ejecución desde la campaña de pago hasta la presencia en la web.</p>
-                <div class="sl">Dentro de esta área</div>
-                <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px">
-                    <div style="padding:14px 18px;border:1px solid rgba(96,165,250,0.3);border-radius:10px;background:rgba(96,165,250,0.05)">
-                        <div style="font-weight:600;color:#fff;margin-bottom:3px">📣 Publicidad</div>
-                        <div style="font-size:0.82rem;color:rgba(255,255,255,0.45)">Meta · Google · TikTok · LinkedIn Ads</div>
-                    </div>
-                    <div style="padding:14px 18px;border:1px solid rgba(96,165,250,0.3);border-radius:10px;background:rgba(96,165,250,0.05)">
-                        <div style="font-weight:600;color:#fff;margin-bottom:3px">🌐 Web</div>
-                        <div style="font-size:0.82rem;color:rgba(255,255,255,0.45)">Desarrollo web y sistemas a medida</div>
-                    </div>
-                </div>
-                <div class="subnote">La estrategia de contenido y redes vive en el nodo Audiovisual.</div>
-            `
-        }
-    },
-
-    // ── SUB-NODOS DE MARKETING ──
-    {
-        id: "publicidad", label: "Publicidad",
-        type: "subnode", size: 26, color: "#93c5fd",
-        content: {
-            tag: "Paid Media",
-            title: "Publicidad Digital",
-            body: `
-                <p>Gestión de campañas en las principales plataformas publicitarias — desde la estrategia hasta la optimización y el reporte de resultados.</p>
-                <div class="sl">Plataformas</div>
-                <div>
-                    <span class="tag">Meta Ads</span>
-                    <span class="tag">Google Ads</span>
-                    <span class="tag">TikTok Ads</span>
-                    <span class="tag">LinkedIn Ads</span>
-                </div>
-                <div class="sl">Qué hago</div>
-                <p>Diseño y configuración de campañas, segmentación de audiencias, A/B testing de creatividades, optimización de presupuesto y reporting de métricas clave (ROAS, CPM, CTR, CPA).</p>
-                <div class="sl">Experiencia</div>
-                <p>Publicidad y Contenido en <strong style="color:#fff">Grupo Aleurca</strong> · 2025 — gestión de campañas y estrategia de contenido.</p>
-            `
-        }
-    },
-    {
-        id: "web", label: "Web",
-        type: "subnode", size: 26, color: "#93c5fd",
+        id: "web", label: "Sistemas",
+        type: "node", size: 38, color: "#8b5cf6",
         content: {
             tag: "Desarrollo & Sistemas",
             title: "Desarrollo Web & Sistemas",
@@ -422,6 +375,13 @@ const NODES = [
                             <div>+56 9 5783 6081</div>
                         </div>
                     </a>
+                    <a href="Catalina_Pla_Resume.pdf" class="clink" target="_blank">
+                        <span class="cicon">📄</span>
+                        <div>
+                            <div style="font-size:0.72rem;color:rgba(255,255,255,0.38);margin-bottom:2px">CV</div>
+                            <div>Descargar PDF</div>
+                        </div>
+                    </a>
                 </div>
             `
         }
@@ -432,15 +392,12 @@ const LINKS = [
     // Catalina → ramas principales
     { source: "catalina", target: "produccion", type: "main" },
     { source: "catalina", target: "rrss",       type: "main" },
-    { source: "catalina", target: "mkt",        type: "main" },
     { source: "catalina", target: "skills",     type: "main" },
     { source: "catalina", target: "contacto",   type: "main" },
-    // Marketing → sub-nodos
-    { source: "mkt", target: "publicidad", type: "sub" },
-    { source: "mkt", target: "web",        type: "sub" },
+    // Web & Sistemas cuelga de Producción (la prueba del sistema)
+    { source: "produccion", target: "web", type: "sub" },
     // Conexiones cruzadas suaves
     { source: "produccion", target: "rrss", type: "cross" },
-    { source: "produccion", target: "web",  type: "cross" },
     { source: "skills",     target: "produccion", type: "cross" },
 ];
 
@@ -729,9 +686,7 @@ const UI_TRANS = {
 const LABEL_TRANS = {
     produccion: { es: 'Producción', en: 'Production' },
     rrss:       { es: 'Audiovisual',en: 'Audiovisual' },
-    mkt:        { es: 'Marketing',  en: 'Marketing' },
-    publicidad: { es: 'Publicidad', en: 'Ads' },
-    web:        { es: 'Web',        en: 'Web' },
+    web:        { es: 'Sistemas',   en: 'Systems' },
     skills:     { es: 'Habilidades',en: 'Skills' },
     contacto:   { es: 'Contacto',   en: 'Contact' }
 };
@@ -764,6 +719,7 @@ const CONTENT_EN = {
         title: "Production & Automation",
         body: `
             <p>My core focus. I run operations in high-demand environments and build the automation that lets everything scale without friction.</p>
+            <p>My background running paid media for brands is exactly why I understand what a brand client is actually asking for — I've been on the other side of the brief.</p>
             <div class="sl">Personajes Casting Agency</div>
             <div style="margin-top:6px;padding:18px;border:1px solid rgba(139,92,246,0.3);border-radius:12px;background:rgba(139,92,246,0.06)">
                 <div style="font-weight:600;color:#fff;margin-bottom:6px">Production & Automation Assistant · 2026 — Present</div>
@@ -832,43 +788,6 @@ const CONTENT_EN = {
             </div>
         `
     },
-    mkt: {
-        tag: "Digital Strategy",
-        title: "Digital Marketing",
-        body: `
-            <p>One of several areas I handle. Strategy and execution from paid campaigns to web presence.</p>
-            <div class="sl">Within this area</div>
-            <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px">
-                <div style="padding:14px 18px;border:1px solid rgba(96,165,250,0.3);border-radius:10px;background:rgba(96,165,250,0.05)">
-                    <div style="font-weight:600;color:#fff;margin-bottom:3px">📣 Advertising</div>
-                    <div style="font-size:0.82rem;color:rgba(255,255,255,0.45)">Meta · Google · TikTok · LinkedIn Ads</div>
-                </div>
-                <div style="padding:14px 18px;border:1px solid rgba(96,165,250,0.3);border-radius:10px;background:rgba(96,165,250,0.05)">
-                    <div style="font-weight:600;color:#fff;margin-bottom:3px">🌐 Web</div>
-                    <div style="font-size:0.82rem;color:rgba(255,255,255,0.45)">Custom web development and systems</div>
-                </div>
-            </div>
-            <div class="subnote">Content and social strategy live in the Audiovisual node.</div>
-        `
-    },
-    publicidad: {
-        tag: "Paid Media",
-        title: "Digital Advertising",
-        body: `
-            <p>Campaign management across major advertising platforms — from strategy to optimization and results reporting.</p>
-            <div class="sl">Platforms</div>
-            <div>
-                <span class="tag">Meta Ads</span>
-                <span class="tag">Google Ads</span>
-                <span class="tag">TikTok Ads</span>
-                <span class="tag">LinkedIn Ads</span>
-            </div>
-            <div class="sl">What I do</div>
-            <p>Campaign design and setup, audience segmentation, creative A/B testing, budget optimization and KPI reporting (ROAS, CPM, CTR, CPA).</p>
-            <div class="sl">Experience</div>
-            <p>Advertising & Content at <strong style="color:#fff">Grupo Aleurca</strong> · 2025 — campaign management and content strategy.</p>
-        `
-    },
     web: {
         tag: "Development & Systems",
         title: "Web Development & Systems",
@@ -934,6 +853,13 @@ const CONTENT_EN = {
                     <div>
                         <div style="font-size:0.72rem;color:rgba(255,255,255,0.38);margin-bottom:2px">WhatsApp</div>
                         <div>+56 9 5783 6081</div>
+                    </div>
+                </a>
+                <a href="Catalina_Pla_Resume.pdf" class="clink" target="_blank">
+                    <span class="cicon">📄</span>
+                    <div>
+                        <div style="font-size:0.72rem;color:rgba(255,255,255,0.38);margin-bottom:2px">CV</div>
+                        <div>Download PDF</div>
                     </div>
                 </a>
             </div>
